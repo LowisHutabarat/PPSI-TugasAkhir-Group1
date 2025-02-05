@@ -24,6 +24,9 @@ RUN composer install --no-dev --optimize-autoloader
 # Setel izin untuk Laravel
 RUN chmod -R 777 storage bootstrap/cache
 
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+
 # Pastikan Laravel menggunakan port yang diberikan oleh Railway
 ENV PORT 8080
 EXPOSE 8080
